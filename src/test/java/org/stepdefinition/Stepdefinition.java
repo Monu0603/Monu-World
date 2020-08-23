@@ -68,16 +68,12 @@ public class Stepdefinition extends Base {
 		Set<String> parent = driver.getWindowHandles();
 		List<String> li = new ArrayList<String>(parent);
 		for (int i = 0; i < li.size(); i++) {
-			li.addAll(parent);
 			if (!child.equals(parent)) {
 				driver.switchTo().window(li.get(1));
-				Pojo2 p1 = new Pojo2();
-				Fill(p1.getPincode(), "851216");
-				Click(p1.getPinsearch());
-				wait(10);
-					Click(p1.getAddtocart());
-					wait(2);
-					screenshot("product 1 order");	
+				Pojo2 pb = new Pojo2();
+				Fill(pb.getPincode(), "851216");
+				Click(pb.getPinsearch());
+		
 		}
 		}		}
 	@Given("user has to check the Pin for delivery")
